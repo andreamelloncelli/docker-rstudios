@@ -31,11 +31,17 @@ RUN userdel docker && \
   MYPWD='$1$xOuE09ww$jfl3dhLPGP6K2NerW9nO/0' ; \
   useradd -u 1000 --create-home -p $MYPWD --shell /bin/bash akiro
 
-## ForR packages
-RUN apt-get install -y libxml2-dev
-
+## ForR packages + git
+RUN apt-get update
+RUN apt-get install -y libxml2-dev \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  git
+  
 ## R packages
 RUN R -e "install.packages('packrat')"
+RUN R -e "install.packages('roxygen2')"
+RUN R -e "install.packages('devtools')"
 
 WORKDIR /
 
