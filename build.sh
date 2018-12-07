@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t rstudios-only:RS-1.2.830 .
+docker build -t rstudios-only:RSP-1.1.463 .
 
