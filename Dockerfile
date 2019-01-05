@@ -11,6 +11,7 @@ RUN apt-get install -y wget
 
 # RUN wget https://download2.rstudio.org/rstudio-server${PRO}1.1.456-amd64.deb
 # RUN gdebi -n rstudio-server${PRO}1.1.456-amd64.deb
+# https://www.rstudio.com/products/rstudio/download-commercial/
 RUN wget https://download2.rstudio.org/rstudio-server-pro-1.1.463-amd64.deb
 RUN gdebi -n rstudio-server-pro-1.1.463-amd64.deb
 
