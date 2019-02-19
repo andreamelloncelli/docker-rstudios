@@ -13,14 +13,15 @@ RUN apt-get install -y wget
 # RUN gdebi -n rstudio-server${PRO}1.1.456-amd64.deb
 
 
-ENV rss_preview_file rstudio-server-1.2.830-amd64.deb
+ENV rss_version 1.2.1206
+ENV rss_preview_file rstudio-server-${rss_version}-amd64.deb
 ENV rss_preview_link https://s3.amazonaws.com/rstudio-ide-build/server/trusty/amd64/${rss_preview_file}
 
 RUN wget ${rss_preview_link}
 RUN gdebi -n ${rss_preview_file}
 
 # RStudio config:
-RUN echo "server-app-armor-enabled=0\nwww-address=127.0.0.1" >> /etc/rstudio/rserver.conf
+#RUN echo "server-app-armor-enabled=0\nwww-address=127.0.0.1" >> /etc/rstudio/rserver.conf
 
 # RStudio port:
 EXPOSE 8787/tcp
