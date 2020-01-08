@@ -1,4 +1,4 @@
-FROM akiro/r-base
+FROM akiro/r-base:R-3.6.1
 
 # https://www.rstudio.com/products/rstudio/download-commercial/
 WORKDIR /root
